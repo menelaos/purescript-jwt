@@ -1,0 +1,42 @@
+{
+  "name": "purescript-jwt",
+  "description": "JSON Web Token (JWT) decoding",
+  "authors": [
+    "Andreas Schacker"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/menelaos/purescript-jwt"
+  },
+  "keywords": [
+    "JWT",
+    "JSON",
+    "Web",
+    "Token"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-b64": "^0.0.1",
+    "purescript-prelude": "^1.0.1",
+    "purescript-strings": "^1.1.0",
+    "purescript-profunctor-lenses": "^1.0.0",
+    "purescript-either": "^1.0.0",
+    "purescript-arrays": "^1.1.0",
+    "purescript-argonaut-core": "^1.0.0",
+    "purescript-exceptions": "^1.0.0",
+    "purescript-errors": "^1.0.0"
+  },
+  "devDependencies": {
+    "purescript-strongcheck": "^1.1.1",
+    "purescript-console": "^1.0.0",
+    "purescript-argonaut-codecs": "^1.0.0",
+    "purescript-maps": "^1.1.0"
+  }
+}

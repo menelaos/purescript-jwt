@@ -1,3 +1,14 @@
+-- | A `JSON Web Token` (JWT) (RFC 7519) is a string that consists of three
+-- | (URL-safe) Base64-encoded strings separated by dots.
+-- |
+-- | <header>.<payload>.<signature>
+-- |
+-- | The `payload` is basically an encoded JSON object which can be
+-- | retrieved via the `decode` function in this module.
+-- |
+-- | For further information see:
+-- | https://en.wikipedia.org/wiki/JSON_Web_Token
+-- | https://tools.ietf.org/html/rfc7519
 module Jwt
   ( JwtError(..)
   , decode
@@ -17,18 +28,6 @@ import Prelude
 
 import Data.String.Base64 as Base64
 
-
--- | A `JSON Web Token` (JWT) (RFC 7519) is a string that consists of three
--- | (URL-safe) Base64-encoded strings separated by dots.
--- |
--- | <header>.<payload>.<signature>
--- |
--- | The `payload` is basically an encoded JSON object which can be
--- | retrieved via the `decode` function in this module.
--- |
--- | For further information see:
--- | https://en.wikipedia.org/wiki/JSON_Web_Token
--- | https://tools.ietf.org/html/rfc7519
 
 -- | A `JwtError a` can be a
 -- | * `MalformedToken` when the token is not of the form

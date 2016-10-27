@@ -23,7 +23,7 @@ import Data.Argonaut.Parser        (jsonParser)
 import Data.Array                  (index)
 import Data.Either                 (Either)
 import Data.Lens                   (_Left, over)
-import Data.String                 (split)
+import Data.String                 (Pattern(Pattern), split)
 import Prelude
 
 import Data.String.Base64 as Base64
@@ -45,7 +45,8 @@ data JwtError a
 decode :: ∀ a. String -> Either (JwtError a) Json
 decode token =
   let
-    payload = note MalformedToken <<< (_ `index` 1) <<< split "." $ token
+    payload =
+      note MalformedToken <<< (_ `index` 1) <<< split (Pattern ".") $ token
 
     -- Map possibly failing functions to the same error type
     decodeBase64 = map (over _Left Base64DecodeError) Base64.decode

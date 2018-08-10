@@ -3,22 +3,27 @@ module Test.Jwt
 where
 
 import Control.Error.Util        (hush)
-import Control.Monad.Eff.Console (log)
-import Data.Argonaut.Core        (fromBoolean, fromObject, fromString)
+import Data.Argonaut.Core        ( fromBoolean, fromObject, fromString
+                                 , stringify
+                                 )
 import Data.Maybe                (Maybe(Just, Nothing))
-import Data.StrMap               (singleton)
+import Effect                    (Effect)
+import Effect.Console            (log)
+import Foreign.Object            (singleton)
 import Jwt                       (decode, decodeWith)
 import Prelude
-import Test.StrongCheck          (SC, (===), assert)
+import Test.StrongCheck          ((===), assert)
 import Test.Utils                (getUsername)
 
-testJwt :: SC () Unit
+testJwt :: Effect Unit
 testJwt = do
   let
-    -- Convert different error types to `Maybe`
-    decode'      = hush <<< decode
+    -- Convert different (error) types to `Maybe` and work around the missing
+    -- `Show` instance for `Json`
+    decode'      = map stringify <<< hush <<< decode
     decodeWith'  = (map <<< map) hush decodeWith
     getUsername' = hush <<< getUsername
+    fromObject'  = Just <<< stringify <<< fromObject
 
     malformedToken     = "malformedToken"
     invalidBase64Token = "Hello.I'mAValidBase𝟞𝟜String.TrustMe"
@@ -34,10 +39,10 @@ testJwt = do
 
   log "decode"
   assert $ decode' adminToken
-    === (Just <<< fromObject <<< singleton "admin" <<< fromBoolean) true
+    === (fromObject' <<< singleton "admin" <<< fromBoolean) true
 
   assert $ decode' usernameToken
-    === (Just <<< fromObject <<< singleton "username" <<< fromString) "山田太郎"
+    === (fromObject' <<< singleton "username" <<< fromString) "山田太郎"
 
   assert $ decode' invalidJsonToken   === Nothing
   assert $ decode' malformedToken     === Nothing

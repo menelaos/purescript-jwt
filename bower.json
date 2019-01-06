@@ -26,7 +26,7 @@
     "purescript-b64": "^0.0.5",
     "purescript-prelude": "^4.0.0",
     "purescript-strings": "^4.0.0",
-    "purescript-profunctor-lenses": "^4.0.0",
+    "purescript-profunctor-lenses": "^5.0.0",
     "purescript-either": "^4.0.0",
     "purescript-arrays": "^5.0.0",
     "purescript-argonaut-core": "^4.0.0",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "purescript-strongcheck": "^4.0.0",
     "purescript-console": "^4.0.0",
-    "purescript-argonaut-codecs": "^4.0.0",
+    "purescript-argonaut-codecs": "^5.0.0",
     "purescript-foreign-object": "^1.0.0"
   }
 }

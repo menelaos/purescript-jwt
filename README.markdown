@@ -5,7 +5,7 @@ JSON Web Token (JWT) decoding
 ## Installation
 
 ```
-bower install purescript-jwt
+spago install jwt
 ```
 
 ## Documentation

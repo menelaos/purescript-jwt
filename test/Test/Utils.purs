@@ -2,10 +2,10 @@ module Test.Utils
   ( getUsername )
 where
 
-import Control.Error.Util   (note)
-import Data.Argonaut.Core   (Json, toObject)
-import Data.Argonaut.Decode ((.:))
-import Data.Either          (Either)
+import Control.Error.Util   ( note )
+import Data.Argonaut.Core   ( Json, toObject )
+import Data.Argonaut.Decode ( (.:) )
+import Data.Either          ( Either )
 import Prelude
 
 

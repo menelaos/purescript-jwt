@@ -2,18 +2,16 @@ module Test.Jwt
   ( testJwt )
 where
 
-import Control.Error.Util        (hush)
-import Data.Argonaut.Core        ( fromBoolean, fromObject, fromString
-                                 , stringify
-                                 )
-import Data.Maybe                (Maybe(Just, Nothing))
-import Effect                    (Effect)
-import Effect.Console            (log)
-import Foreign.Object            (singleton)
-import Jwt                       (decode, decodeWith)
+import Control.Error.Util ( hush )
+import Data.Argonaut.Core ( fromBoolean, fromObject, fromString, stringify )
+import Data.Maybe         ( Maybe (Just, Nothing) )
+import Effect             ( Effect )
+import Effect.Console     ( log )
+import Foreign.Object     ( singleton )
+import Jwt                ( decode, decodeWith )
 import Prelude
-import Test.StrongCheck          ((===), assert)
-import Test.Utils                (getUsername)
+import Test.StrongCheck   ( (===), assert )
+import Test.Utils         ( getUsername )
 
 testJwt :: Effect Unit
 testJwt = do

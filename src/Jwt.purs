@@ -10,23 +10,23 @@
 -- | https://en.wikipedia.org/wiki/JSON_Web_Token
 -- | https://tools.ietf.org/html/rfc7519
 module Jwt
-  ( JwtError(..)
+  ( JwtError (..)
   , decode
   , decodeWith
   )
 where
 
-import Control.Error.Util          (note)
-import Data.Argonaut.Core          (Json)
-import Data.Argonaut.Parser        (jsonParser)
-import Data.Array                  (index)
-import Data.Either                 (Either)
-import Data.Lens                   (_Left, over)
-import Data.String                 (Pattern(Pattern), split)
-import Effect.Exception            (Error)
+import Control.Error.Util   ( note )
+import Data.Argonaut.Core   ( Json )
+import Data.Argonaut.Parser ( jsonParser )
+import Data.Array           ( index )
+import Data.Either          ( Either )
+import Data.Lens            ( _Left, over )
+import Data.String          ( Pattern (Pattern), split )
+import Data.String.Base64   as Base64
+import Effect.Exception     ( Error )
 import Prelude
 
-import Data.String.Base64 as Base64
 
 
 -- | A `JwtError a` can be a

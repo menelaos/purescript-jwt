@@ -4,6 +4,10 @@ You can edit this file as you like.
 -}
 { name =
     "jwt"
+, license =
+    "Apache-2.0"
+, repository =
+    "git://github.com/menelaos/purescript-jwt.git"
 , dependencies =
     [ "argonaut-codecs"
     , "argonaut-core"

@@ -12,6 +12,7 @@ You can edit this file as you like.
     [ "argonaut-codecs"
     , "argonaut-core"
     , "arrays"
+    , "assert"
     , "b64"
     , "console"
     , "effect"
@@ -23,7 +24,6 @@ You can edit this file as you like.
     , "profunctor-lenses"
     , "psci-support"
     , "strings"
-    , "strongcheck"
     ]
 , packages =
     ./packages.dhall

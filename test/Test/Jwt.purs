@@ -10,7 +10,7 @@ import Effect.Console     ( log )
 import Foreign.Object     ( singleton )
 import Jwt                ( decode, decodeWith )
 import Prelude
-import Test.StrongCheck   ( (===), assert )
+import Test.Assert        ( assert )
 import Test.Utils         ( getUsername )
 
 testJwt :: Effect Unit
@@ -37,18 +37,18 @@ testJwt = do
 
   log "decode"
   assert $ decode' adminToken
-    === (fromObject' <<< singleton "admin" <<< fromBoolean) true
+    == (fromObject' <<< singleton "admin" <<< fromBoolean) true
 
   assert $ decode' usernameToken
-    === (fromObject' <<< singleton "username" <<< fromString) "山田太郎"
+    == (fromObject' <<< singleton "username" <<< fromString) "山田太郎"
 
-  assert $ decode' invalidJsonToken   === Nothing
-  assert $ decode' malformedToken     === Nothing
-  assert $ decode' invalidBase64Token === Nothing
+  assert $ decode' invalidJsonToken   == Nothing
+  assert $ decode' malformedToken     == Nothing
+  assert $ decode' invalidBase64Token == Nothing
 
   log "decodeWith"
-  assert $ decodeWith' getUsername usernameToken      === Just "山田太郎"
-  assert $ decodeWith' getUsername malformedToken     === Nothing
-  assert $ decodeWith' getUsername invalidBase64Token === Nothing
-  assert $ decodeWith' getUsername adminToken         === Nothing
-  assert $ decodeWith' getUsername invalidJsonToken   === Nothing
+  assert $ decodeWith' getUsername usernameToken      == Just "山田太郎"
+  assert $ decodeWith' getUsername malformedToken     == Nothing
+  assert $ decodeWith' getUsername invalidBase64Token == Nothing
+  assert $ decodeWith' getUsername adminToken         == Nothing
+  assert $ decodeWith' getUsername invalidJsonToken   == Nothing

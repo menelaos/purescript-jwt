@@ -1,0 +1,27 @@
+{
+  "name": "purescript-jwt",
+  "version": "1.0.0",
+  "description": "JSON Web Token (JWT) decoding",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menelaos/purescript-jwt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menelaos/purescript-jwt/issues"
+  },
+  "homepage": "https://github.com/menelaos/purescript-jwt#readme",
+  "devDependencies": {
+    "purescript": "^0.14.0",
+    "spago": "^0.19.1"
+  }
+}

@@ -116,39 +116,11 @@ let additions =
   }
 -------------------------------
 -}
-
-
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210307/packages.dhall sha256:5f9e009bf539a4d1fa2be3ea340aeca4e3ca69515f5e351473d722619906d0b0
+      https://github.com/purescript/package-sets/releases/download/psc-0.14.0-20210318/packages.dhall sha256:98bbacd65191cef354ecbafa1610be13e183ee130491ab9c0ef6e3d606f781b5
 
 let overrides = {=}
 
-let additions = {
-    b64 =
-        { dependencies =
-            [ "arraybuffer-types"
-            , "assert"
-            , "console"
-            , "effect"
-            , "either"
-            , "encoding"
-            , "enums"
-            , "exceptions"
-            , "functions"
-            , "partial"
-            , "prelude"
-            , "psci-support"
-            , "quickcheck"
-            , "strings"
-            , "stringutils"
-            , "unicode"
-            , "unsafe-coerce"
-            ]
-        , repo =
-            "https://github.com/CarstenKoenig/purescript-b64.git"
-        , version =
-            "purescript-0.14"  -- branch, tag, or commit hash
-        }
-}
+let additions = {=}
 
 in  upstream // overrides // additions

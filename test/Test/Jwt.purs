@@ -20,7 +20,6 @@ testJwt = do
     -- `Show` instance for `Json`
     decode'      = map stringify <<< hush <<< decode
     decodeWith'  = (map <<< map) hush decodeWith
-    getUsername' = hush <<< getUsername
     fromObject'  = Just <<< stringify <<< fromObject
 
     malformedToken     = "malformedToken"

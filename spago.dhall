@@ -1,7 +1,3 @@
-{-
-Welcome to a Spago project!
-You can edit this file as you like.
--}
 { name = "jwt"
 , license = "Apache-2.0"
 , repository = "git://github.com/menelaos/purescript-jwt.git"
@@ -14,7 +10,6 @@ You can edit this file as you like.
   , "console"
   , "effect"
   , "either"
-  , "errors"
   , "exceptions"
   , "foreign-object"
   , "maybe"

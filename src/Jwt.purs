@@ -16,17 +16,15 @@ module Jwt
   )
 where
 
-import Control.Error.Util   ( note )
 import Data.Argonaut.Core   ( Json )
 import Data.Argonaut.Parser ( jsonParser )
 import Data.Array           ( index )
-import Data.Either          ( Either )
+import Data.Either          ( Either, note )
 import Data.Lens            ( _Left, over )
 import Data.String          ( Pattern (Pattern), split )
 import Data.String.Base64   as Base64
 import Effect.Exception     ( Error )
 import Prelude
-
 
 
 -- | A `JwtError a` can be a

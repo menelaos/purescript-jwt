@@ -2,8 +2,8 @@ module Test.Jwt
   ( testJwt )
 where
 
-import Control.Error.Util ( hush )
 import Data.Argonaut.Core ( fromBoolean, fromObject, fromString, stringify )
+import Data.Either        ( hush )
 import Data.Maybe         ( Maybe (Just, Nothing) )
 import Effect             ( Effect )
 import Effect.Console     ( log )

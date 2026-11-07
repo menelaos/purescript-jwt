@@ -5,24 +5,25 @@
         "path": "./",
         "core": {
           "dependencies": [
-            "argonaut-codecs",
             "argonaut-core",
             "arrays",
-            "assert",
             "b64",
-            "console",
-            "effect",
             "either",
             "exceptions",
-            "foreign-object",
-            "maybe",
             "prelude",
             "profunctor-lenses",
             "strings"
           ]
         },
         "test": {
-          "dependencies": []
+          "dependencies": [
+            "argonaut-codecs",
+            "assert",
+            "console",
+            "effect",
+            "foreign-object",
+            "maybe"
+          ]
         }
       }
     },

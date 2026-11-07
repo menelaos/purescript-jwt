@@ -18,6 +18,12 @@ package:
       - effect
       - foreign-object
       - maybe
+  publish:
+    version: 0.0.10
+    license: Apache-2.0
+    location:
+      githubOwner: menelaos
+      githubRepo: purescript-jwt
 workspace:
   extraPackages: {}
   packageSet:
